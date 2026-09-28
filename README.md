@@ -16,7 +16,10 @@ Heart disease is one of the leading causes of mortality worldwide. Early detecti
 
 ---
 ## Startup instructions
-cd HeartDiseaseMLP
+- ensure your current working directory contains the entire repository structure by using the command 'ls' (see below for more details)
+  
+- install all the required packages to run the model
+pip install -r requirements.txt
 
 - ensure streamlit is installed by using the command pip install streamlit --upgrade
 streamlit run app.py

@@ -39,7 +39,7 @@ st.markdown("""
     
     /* Form styling */
     .stForm {
-        background-color: white;
+        background-color: green;
         padding: 2rem;
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);

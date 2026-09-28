@@ -16,9 +16,11 @@ Heart disease is one of the leading causes of mortality worldwide. Early detecti
 
 ---
 ## Startup instructions
-- ensure your current working directory contains the entire repository structure by using the command 'ls' (see below for more details)
+- Use the command git clone https://github.com/FatimaSaadat17/HeartDiseaseMLP.git in your terminal, ensure that you are in your working directory
+  
   
 - install all the required packages to run the model
+cd HeartDiseaseMLP
 pip install -r requirements.txt
 
 - ensure streamlit is installed by using the command pip install streamlit --upgrade

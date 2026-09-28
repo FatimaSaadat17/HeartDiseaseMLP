@@ -128,32 +128,31 @@ with st.form("feature_form"):
     if submitted:
         print(features_dict)
 
-# convert male to 1 and female to 0
-if (features_dict['sex'] == 'M' or features_dict['sex'] == 'm'):
-    features_dict['sex'] = 1
-elif (features_dict['sex'] == 'F' or features_dict['sex'] == 'f'):
-    features_dict['sex'] = 0
-
-# convert features dict to a dataframe
-x = pd.DataFrame(data=features_dict, index=[0])
-
-# scale the features using the standard scaler
-scaler = StandardScaler()
-# scale original dataset and fit scaler on it
-X = df.iloc[:, :-1]
-scaler.fit(X)
-# transform x using that scaler
-x_scaled = scaler.transform(x)
-
-# convert x into a torch tensor
-x_tensor =  torch.tensor(x_scaled, dtype=torch.float32)
-
-# input tensor into model and show the output
-with torch.no_grad():
-    pred = model(x_tensor)
-
 # --- REPLACED/ENHANCED LAST PREDICTION DISPLAY LINE ---
 if submitted:
+    # convert male to 1 and female to 0
+    if (features_dict['sex'] == 'M' or features_dict['sex'] == 'm'):
+        features_dict['sex'] = 1
+    elif (features_dict['sex'] == 'F' or features_dict['sex'] == 'f'):
+        features_dict['sex'] = 0
+
+    # convert features dict to a dataframe
+    x = pd.DataFrame(data=features_dict, index=[0])
+
+    # scale the features using the standard scaler
+    scaler = StandardScaler()
+    # scale original dataset and fit scaler on it
+    X = df.iloc[:, :-1]
+    scaler.fit(X)
+    # transform x using that scaler
+    x_scaled = scaler.transform(x)
+
+    # convert x into a torch tensor
+    x_tensor = torch.tensor(x_scaled, dtype=torch.float32)
+
+    # input tensor into model and show the output
+    with torch.no_grad():
+        pred = model(x_tensor)
     prediction_value = (pred >= 0.5).float()[0].item()
     prob_percent = float(pred[0].item()) * 100
 

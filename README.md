@@ -16,15 +16,15 @@ Heart disease is one of the leading causes of mortality worldwide. Early detecti
 
 ---
 ## Startup instructions
-- Use the command git clone https://github.com/FatimaSaadat17/HeartDiseaseMLP.git in your terminal, ensure that you are in your working directory
+- Use the command ```git clone https://github.com/FatimaSaadat17/HeartDiseaseMLP.git``` in your terminal, ensure that you are in your working directory
   
   
 - install all the required packages to run the model
-cd HeartDiseaseMLP
-pip install -r requirements.txt
+```cd HeartDiseaseMLP```
+```pip install -r requirements.txt```
 
 - ensure streamlit is installed by using the command pip install streamlit --upgrade
-streamlit run app.py
+```streamlit run app.py```
 
 
 ## Repository Structure
